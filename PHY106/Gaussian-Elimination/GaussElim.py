@@ -10,7 +10,7 @@ def convertToEchelon(matrix: list, dim: int) -> list:
     return matrix
 
 def backSubstitute(matrix: list, dim: int) -> list:
-    '''returns a dim x 1 matrix with solutions to the augmented matrix of dimensions dim given as arguments'''
+    '''returns a dim x 1 matrix with solutions to the augmented matrix of dimensions dim given as arguments by using back substitution'''
     sols = []
     sols.append(matrix[dim-1][dim]/matrix[dim-1][dim-1])
 
