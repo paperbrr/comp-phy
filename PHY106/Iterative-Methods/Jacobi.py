@@ -1,7 +1,7 @@
 def IterateJacobi(matrix:list, dims:int, ansMatrix:list, maxIters:int, maxErr:float, initialVals:list)->list:
     '''returns the required iteration count and solution column after solving matrix in accordance with ansMatrix
     and ensuring that error is less than maxErr. More accurate initial values will lead to a lesser number of
-    iterations needed.'''
+    iterations needed. uses Jacobi\'s method'''
     sols = [[i for i in initialVals]]
     ans = ansMatrix
     solsCount = 1
