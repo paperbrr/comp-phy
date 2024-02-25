@@ -68,7 +68,8 @@ def forwardSubstitute(matrix: list, dim: int) -> list:
 
     return sols
 
-def createAugmentedMatrix(matrix, dim, augCol):
+def createAugmentedMatrix(matrix, dim, augCol)->list:
+    '''creates and returns an augmented matrix with the provided matrix and column to augment'''
     augMatrix = copyMatrix(matrix, dim)
     for i in range(dim):
         augMatrix[i].append(augCol[i])
