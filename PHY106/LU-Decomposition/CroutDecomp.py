@@ -13,3 +13,13 @@ def CroutDecomposition(matrix:list, dim:int)->tuple:
                 lower[i][k] -= lower[j][k]*subFactor
 
     return lower, upper
+
+def findSolsCrout(matrix, ans, dims):
+    '''find the solutions for the given matrix using crout\'s decomposition'''
+    lower, upper = CroutDecomposition(matrix, dims)
+    LY = createAugmentedMatrix(lower, dims, ans)
+    Y = forwardSubstitute(LY, dims)
+    UX = createAugmentedMatrix(upper, dims, Y)
+    X = backSubstitute(UX, dims)
+
+    return X
