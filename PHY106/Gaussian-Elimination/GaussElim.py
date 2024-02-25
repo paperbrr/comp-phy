@@ -1,12 +1,4 @@
-def printMatrix(matrix):
-    for i in matrix:
-        print(i)
-    print("----------------")
-
-def changeSolCol(matrix, newSolCol, dim):
-    for i in range(dim):
-        matrix[i][dim] = newSolCol[i]
-    return matrix
+from Utils import *
 
 def convertToEchelon(matrix: list, dim: int) -> list:
     '''returns an upper echelon matrix (non reduced) converted from a given augmented matrix with dimensions dim'''
