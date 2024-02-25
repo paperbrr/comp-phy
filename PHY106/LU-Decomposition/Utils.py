@@ -36,3 +36,40 @@ def createTriangularMatrix(dim:int, type:str)->list:
                     currentRow.append(0)
             matrix.append(currentRow)
     return matrix        
+
+def backSubstitute(matrix: list, dim: int) -> list:
+    '''returns a dim x 1 matrix with solutions to the augmented matrix of dimensions dim given as arguments by using back substitution'''
+    sols = []
+    sols.append(matrix[dim-1][dim]/matrix[dim-1][dim-1])
+
+    for i in range(dim-2, -1, -1):
+        currentAns = matrix[i][dim]
+        currentSol = 0
+        for j in range(dim-1, i, -1):
+            currentSol += matrix[i][j]*sols[dim-(j+1)]
+
+        sols.append((currentAns-currentSol)/matrix[i][i])
+
+    sols.reverse()
+    return sols
+
+def forwardSubstitute(matrix: list, dim: int) -> list:
+    '''returns a dim x 1 matrix with solutions to the augmented matrix of dimensions dim given as arguments by using forward substitution'''
+    sols = []
+    sols.append(matrix[0][dim]/matrix[0][0])
+
+    for i in range(1, dim):
+        currentAns = matrix[i][dim]
+        currentSol = 0
+        for j in range(0, i):
+            currentSol += matrix[i][j]*sols[j]
+
+        sols.append((currentAns-currentSol)/matrix[i][i])
+
+    return sols
+
+def createAugmentedMatrix(matrix, dim, augCol):
+    augMatrix = copyMatrix(matrix, dim)
+    for i in range(dim):
+        augMatrix[i].append(augCol[i])
+    return augMatrix
