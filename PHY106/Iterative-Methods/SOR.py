@@ -1,4 +1,4 @@
-def IterateSOR(matrix:list, dims:int, ansMatrix:list, maxIters:int, maxErr:float, initialVals:list, omega)->tuple:
+def IterateSOR(matrix:list, dims:int, ansMatrix:list, maxIters:int, maxErr:float, initialVals:list, omega:int)->tuple:
     '''returns the required iteration count and solution column after solving matrix in accordance with ansMatrix
     and ensuring that error is less than maxErr. More accurate initial values will lead to a lesser number of
     iterations needed. uses SOR method, so omega input is needed'''
