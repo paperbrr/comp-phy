@@ -24,7 +24,7 @@ def IterateJacobi(matrix:list, dims:int, ansMatrix:list, maxIters:int, maxErr:fl
         for i in range(len(ans)):
             if abs(sols[solsCount-1][i] - sols[solsCount-2][i]) < maxErr:
                 check += 1
-        if check == 3:
+        if check == dims:
             break
     
     sols[solsCount-1].reverse()
