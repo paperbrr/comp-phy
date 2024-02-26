@@ -1,0 +1,7 @@
+LISTS CHANGES BETWEEN GaussSiedel.py, Jacobi.py and SOR.py
+
+Considering Jacobi the original:
+
+> GaussSiedel has an insertion an line 16. It checks whether a solution for the currently iterating variable already exists in the current solution set, and uses it if so.
+
+> SOR has the same insertion as GaussSiedel. It also has an extra omega (SOR rate) parameter. There is also a change in line 20, where the currentAnswer is multiplied by omega/A[i,i]. The next line is to balance the new solution.
